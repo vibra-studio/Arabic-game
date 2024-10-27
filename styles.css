@@ -31,7 +31,7 @@ h1 {
     font-size: 1.25rem;
     color: #fff; /* Light text color for display */
     line-height: 1.6;
-    white-space: pre; /* Prevent line breaks and preserve spaces */
+    white-space: normal; /* Allow normal text flow */
 }
 
 .text-green { color: #81c784; } /* Light green for correct text */
