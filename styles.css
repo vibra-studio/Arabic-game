@@ -1,0 +1,99 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #1e1e1e; /* Darker card background */
+    padding: 2rem;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+    border-radius: 12px; /* Rounded corners */
+    margin-top: 5vh;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #f1f1f1; /* Light color for headings */
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.text-display {
+    padding: 1rem;
+    background: #2a2a2a; /* Slightly lighter for contrast */
+    border-radius: 8px;
+    font-size: 1.25rem;
+    color: #e0e0e0; /* Consistent light text */
+    line-height: 1.6;
+    overflow-wrap: break-word; /* Handle long words */
+}
+
+.text-green { color: #81c784; } /* Light green for correct text */
+.text-red { color: #e57373; } /* Light red for incorrect text */
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #444; /* Darker border for textarea */
+    outline: none;
+    resize: none;
+    margin-top: 1rem;
+    background-color: #333; /* Dark background for textarea */
+    color: #e0e0e0; /* Light text color */
+}
+
+textarea::placeholder {
+    color: #aaa; /* Placeholder color */
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #e0e0e0; /* Light color for stats */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px; /* Increased radius for a modern look */
+    cursor: pointer;
+    color: #fff; /* White text for buttons */
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+.easy { background-color: #4caf50; } /* Green for easy */
+.medium { background-color: #ff9800; } /* Orange for medium */
+.hard { background-color: #f44336; } /* Red for hard */
+
+button:hover {
+    filter: brightness(1.1); /* Brighten on hover */
+}
+
+.next {
+    background-color: #4caf50; /* Consistent with easy button */
+}
+
+.credit {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #aaa; /* Lighter color for credits */
+}

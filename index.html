@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Practice</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="sentences.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>تدريب الكتابة</h1>
+  <div id="textDisplay" class="text-display"></div>
+  <textarea id="userInput" placeholder="ابدأ الكتابة هنا..."></textarea>
+  <div class="stats">
+    <div>WPM: <span id="wpm">0</span></div>
+    <div>Accuracy: <span id="accuracy">100</span>%</div>
+  </div>
+  <div class="button-container">
+    <button class="easy" onclick="selectDifficulty('Easy')">سهل</button>
+    <button class="medium" onclick="selectDifficulty('Medium')">متوسط</button>
+    <button class="hard" onclick="selectDifficulty('Hard')">صعب</button>
+  </div>
+  <p class="credit">محمد خليل</p> <!-- Added credit text here -->
+  <div class="button-container" id="nextButton" style="display: none;">
+    <button class="next" onclick="nextSentence()">Next</button> <!-- Next button -->
+  </div>
+</div>
+
+</body>
+</html>
