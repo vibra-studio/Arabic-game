@@ -23,19 +23,8 @@ if ('serviceWorker' in navigator) {
 // Function to render the text
 function renderText() {
     console.log("Rendering text:", text); // Debug: show the text being rendered
-    
-    // Render the entire text at once
-    textDisplayElement.innerHTML = text.split("").map((char, index) => {
-        let color = "text-[#555]";
-        if (userInputElement.value[index] === char) {
-            color = "text-green";
-        } else if (userInputElement.value[index] != null) {
-            color = "text-red";
-        }
-        return `<span class="${color}" style="display: inline-block;">${char}</span>`;
-    }).join("");
+    textDisplayElement.innerText = text; // Set the text directly
 }
-
 
 // Handle input change
 function handleInputChange() {
