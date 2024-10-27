@@ -26,13 +26,14 @@ h1 {
 
 .text-display {
     padding: 1rem;
-    background: #2a2a2a; /* Slightly lighter for contrast */
+    background: #f8f9fa;
     border-radius: 8px;
     font-size: 1.25rem;
-    color: #e0e0e0; /* Consistent light text */
+    color: #555;
     line-height: 1.6;
-    overflow-wrap: break-word; /* Handle long words */
+    white-space: pre; /* Prevent line breaks and preserve spaces */
 }
+
 
 .text-green { color: #81c784; } /* Light green for correct text */
 .text-red { color: #e57373; } /* Light red for incorrect text */
