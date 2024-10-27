@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Cairo', sans-serif; /* Updated font to Cairo */
     background-color: #121212; /* Dark background */
     color: #e0e0e0; /* Light text color */
     direction: rtl;
@@ -26,14 +26,13 @@ h1 {
 
 .text-display {
     padding: 1rem;
-    background: #f8f9fa;
+    background: #3a3f42; /* Darker background for text display */
     border-radius: 8px;
     font-size: 1.25rem;
-    color: #555;
+    color: #fff; /* Light text color for display */
     line-height: 1.6;
     white-space: pre; /* Prevent line breaks and preserve spaces */
 }
-
 
 .text-green { color: #81c784; } /* Light green for correct text */
 .text-red { color: #e57373; } /* Light red for incorrect text */
