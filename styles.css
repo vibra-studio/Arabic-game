@@ -34,8 +34,16 @@ h1 {
     white-space: normal; /* Allow normal text flow */
 }
 
-.text-green { color: #81c784; } /* Light green for correct text */
-.text-red { color: #e57373; } /* Light red for incorrect text */
+.text-green {
+    color: #81c784; /* Light green for correct text */
+}
+.text-red {
+    color: #e57373; /* Light red for incorrect text */
+}
+.default {
+    color: #fff; /* Default color for regular text */
+}
+
 
 textarea {
     width: 100%;
