@@ -32,7 +32,7 @@ function renderText() {
         } else if (userInput[i] !== undefined) {
             colorClass = "text-red"; // Red for incorrect characters
         }
-        coloredText += `<span class="${colorClass}">${text[i]}</span>`;
+        coloredText += `<span class="${colorClass}" style="display: inline;">${text[i]}</span>`;
     }
 
     textDisplayElement.innerHTML = `<span style="font-family: inherit;">${coloredText}</span>`;
