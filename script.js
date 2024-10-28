@@ -20,10 +20,22 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// Function to render the text
+// Function to render the text with color based on user input
 function renderText() {
-    console.log("Rendering text:", text); // Debug: show the text being rendered
-    textDisplayElement.innerText = text; // Set the text directly
+    let userInput = userInputElement.value;
+    let coloredText = "";
+
+    for (let i = 0; i < text.length; i++) {
+        let colorClass = "default"; // Default color for text
+        if (userInput[i] === text[i]) {
+            colorClass = "text-green"; // Green for correct characters
+        } else if (userInput[i] !== undefined) {
+            colorClass = "text-red"; // Red for incorrect characters
+        }
+        coloredText += `<span class="${colorClass}">${text[i]}</span>`;
+    }
+
+    textDisplayElement.innerHTML = `<span style="font-family: inherit;">${coloredText}</span>`;
 }
 
 // Handle input change
@@ -33,18 +45,19 @@ function handleInputChange() {
     }
 
     let newInput = userInputElement.value;
-    console.log("User input:", newInput); // Debug: show user input
     let correctChars = newInput.split("").filter((char, i) => char === text[i]).length;
     let accuracyScore = Math.round((correctChars / newInput.length) * 100);
     accuracyElement.innerText = isNaN(accuracyScore) ? 100 : accuracyScore;
 
-    if (newInput.length === text.length) {
+    // Check if user has typed the text correctly
+    if (newInput === text) {
         const timeElapsed = (Date.now() - startTime) / 1000 / 60;
         const wordsTyped = text.split(" ").length;
         wpmElement.innerText = Math.round(wordsTyped / timeElapsed);
         isFinished = true;
-        document.getElementById("nextButton").style.display = "block";
-        console.log("Finished typing! WPM:", wpmElement.innerText); // Debug: show WPM when finished
+        document.getElementById("actionButtons").style.display = "flex"; // Show action buttons
+    } else {
+        document.getElementById("actionButtons").style.display = "none"; // Hide buttons if not correct
     }
 
     renderText();
@@ -57,15 +70,13 @@ function resetGame() {
     wpmElement.innerText = 0;
     accuracyElement.innerText = 100;
     isFinished = false;
-    document.getElementById("nextButton").style.display = "none";
+    document.getElementById("actionButtons").style.display = "none"; // Hide buttons initially
     renderText();
-    console.log("Game reset!"); // Debug: notify game reset
 }
 
 // Select difficulty
 function selectDifficulty(difficulty) {
     currentDifficulty = difficulty;
-    console.log("Difficulty selected:", currentDifficulty); // Debug: show selected difficulty
     text = getRandomSentence(difficulty);
     resetGame();
 }
@@ -79,7 +90,6 @@ function nextSentence() {
 // Get a random sentence based on difficulty
 function getRandomSentence(difficulty) {
     let sentencesForDifficulty = sentences[difficulty];
-    console.log("Sentences for difficulty:", sentencesForDifficulty); // Debug: show sentences for the selected difficulty
     return sentencesForDifficulty[Math.floor(Math.random() * sentencesForDifficulty.length)];
 }
 
