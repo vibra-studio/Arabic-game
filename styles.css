@@ -1,7 +1,7 @@
 body {
-    font-family: 'Cairo', sans-serif; /* Updated font to Cairo */
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text color */
+    font-family: 'Cairo', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
     direction: rtl;
     margin: 0;
     padding: 0;
@@ -10,56 +10,57 @@ body {
 .container {
     max-width: 600px;
     margin: auto;
-    background: #1e1e1e; /* Darker card background */
+    background: #1e1e1e;
     padding: 2rem;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
-    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
     margin-top: 5vh;
 }
 
 h1 {
     font-size: 2rem;
-    color: #f1f1f1; /* Light color for headings */
+    color: #f1f1f1;
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
 .text-display {
     padding: 1rem;
-    background: #3a3f42; /* Darker background for text display */
+    background: #3a3f42;
     border-radius: 8px;
     font-size: 1.25rem;
-    color: #fff; /* Light text color for display */
+    color: #fff;
     line-height: 1.6;
-    white-space: normal; /* Allow normal text flow */
+    white-space: normal;
 }
 
 .text-green {
-    color: #81c784; /* Light green for correct text */
-}
-.text-red {
-    color: #e57373; /* Light red for incorrect text */
-}
-.default {
-    color: #fff; /* Default color for regular text */
+    color: #81c784;
 }
 
+.text-red {
+    color: #e57373;
+}
+
+.default {
+    color: #fff;
+}
 
 textarea {
-    width: 100%;
+    width: 100%; /* Full width within the container */
     padding: 1rem;
     font-size: 1rem;
     border-radius: 8px;
-    border: 1px solid #444; /* Darker border for textarea */
+    border: 1px solid #444;
     outline: none;
     resize: none;
     margin-top: 1rem;
-    background-color: #333; /* Dark background for textarea */
-    color: #e0e0e0; /* Light text color */
+    background-color: #333;
+    color: #e0e0e0;
 }
 
 textarea::placeholder {
-    color: #aaa; /* Placeholder color */
+    color: #aaa;
 }
 
 .stats {
@@ -67,11 +68,12 @@ textarea::placeholder {
     justify-content: space-between;
     margin-top: 1rem;
     font-size: 1.25rem;
-    color: #e0e0e0; /* Light color for stats */
+    color: #e0e0e0;
 }
 
 .button-container {
     display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
     justify-content: center;
     gap: 1rem;
     margin-top: 1.5rem;
@@ -81,27 +83,37 @@ button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
-    border-radius: 8px; /* Increased radius for a modern look */
+    border-radius: 8px;
     cursor: pointer;
-    color: #fff; /* White text for buttons */
-    transition: background-color 0.3s; /* Smooth color transition */
+    color: #fff;
+    transition: background-color 0.3s;
 }
 
-.easy { background-color: #4caf50; } /* Green for easy */
-.medium { background-color: #ff9800; } /* Orange for medium */
-.hard { background-color: #f44336; } /* Red for hard */
+.easy { background-color: #4caf50; }
+.medium { background-color: #ff9800; }
+.hard { background-color: #f44336; }
 
 button:hover {
-    filter: brightness(1.1); /* Brighten on hover */
+    filter: brightness(1.1);
 }
 
 .next {
-    background-color: #4caf50; /* Consistent with easy button */
+    background-color: #4caf50;
 }
 
 .credit {
     text-align: center;
     margin-top: 1rem;
     font-size: 0.9rem;
-    color: #aaa; /* Lighter color for credits */
+    color: #aaa;
+}
+
+/* Responsive font adjustment */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .stats {
+        font-size: 1rem;
+    }
 }
