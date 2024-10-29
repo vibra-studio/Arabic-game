@@ -1,5 +1,5 @@
 // Update the cache version each time you make a change to your files
-const CACHE_NAME = 'typing-practice-v3'; 
+const CACHE_NAME = 'typing-practice-v4'; 
 const FILES_TO_CACHE = [
     '/',
     '/index.html',
