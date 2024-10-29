@@ -1,24 +1,12 @@
 let text = "";
 let currentDifficulty = "";
+let usedSentences = { Easy: new Set(), Medium: new Set(), Hard: new Set() };
 let userInputElement = document.getElementById("userInput");
 let textDisplayElement = document.getElementById("textDisplay");
 let startTime = null;
 let wpmElement = document.getElementById("wpm");
 let accuracyElement = document.getElementById("accuracy");
 let isFinished = false;
-
-// Register the service worker
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-            .then((registration) => {
-                console.log('Service Worker registered:', registration);
-            })
-            .catch((error) => {
-                console.log('Service Worker registration failed:', error);
-            });
-    });
-}
 
 // Function to render the text with color based on user input
 function renderText() {
@@ -87,11 +75,27 @@ function nextSentence() {
     resetGame();
 }
 
-// Get a random sentence based on difficulty
+// Get a random sentence based on difficulty without repetition
 function getRandomSentence(difficulty) {
     let sentencesForDifficulty = sentences[difficulty];
-    return sentencesForDifficulty[Math.floor(Math.random() * sentencesForDifficulty.length)];
+    let usedSet = usedSentences[difficulty];
+
+    // Reset the used sentences set if all sentences have been used
+    if (usedSet.size === sentencesForDifficulty.length) {
+        usedSet.clear();
+    }
+
+    // Find a new sentence that hasn't been used
+    let sentence;
+    do {
+        sentence = sentencesForDifficulty[Math.floor(Math.random() * sentencesForDifficulty.length)];
+    } while (usedSet.has(sentence));
+
+    // Mark this sentence as used
+    usedSet.add(sentence);
+    return sentence;
 }
 
+// Event listeners
 userInputElement.addEventListener("input", handleInputChange);
 renderText();
