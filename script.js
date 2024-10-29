@@ -8,6 +8,10 @@ let wpmElement = document.getElementById("wpm");
 let accuracyElement = document.getElementById("accuracy");
 let isFinished = false;
 
+// Sound Effects
+const nextSound = new Audio("next-sound.mp3");
+const typeSound = new Audio("type.mp3");
+
 // Function to render the text with color based on user input
 function renderText() {
     let userInput = userInputElement.value;
@@ -31,6 +35,10 @@ function handleInputChange() {
     if (!startTime) {
         startTime = Date.now();
     }
+
+    // Play typing sound
+    typeSound.currentTime = 0; // Reset sound to start to allow rapid replays
+    typeSound.play();
 
     let newInput = userInputElement.value;
     let correctChars = newInput.split("").filter((char, i) => char === text[i]).length;
@@ -71,6 +79,7 @@ function selectDifficulty(difficulty) {
 
 // Load next sentence
 function nextSentence() {
+    nextSound.play(); // Play next button sound
     text = getRandomSentence(currentDifficulty);
     resetGame();
 }
