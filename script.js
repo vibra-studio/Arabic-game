@@ -8,9 +8,8 @@ let wpmElement = document.getElementById("wpm");
 let accuracyElement = document.getElementById("accuracy");
 let isFinished = false;
 
-// Sound Effects
+// Sound Effect for "Next" Button
 const nextSound = new Audio("next-sound.mp3");
-const typeSound = new Audio("type.mp3");
 
 // Function to render the text with color based on user input
 function renderText() {
@@ -35,10 +34,6 @@ function handleInputChange() {
     if (!startTime) {
         startTime = Date.now();
     }
-
-    // Play typing sound
-    typeSound.currentTime = 0; // Reset sound to start to allow rapid replays
-    typeSound.play();
 
     let newInput = userInputElement.value;
     let correctChars = newInput.split("").filter((char, i) => char === text[i]).length;
